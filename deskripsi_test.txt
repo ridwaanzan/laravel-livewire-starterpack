@@ -1,0 +1,8 @@
+membuat program registrasi.
+dimana result dari registrasi itu keluarnya  sesuai statement dibawah ini:
+
+Anda Remaja
+Anda Remaja dewasa
+Anda WANITA di usia PRODUKTIF
+Anda PRIA di usia PRODUKTIF
+dan seterusnya
