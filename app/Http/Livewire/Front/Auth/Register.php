@@ -6,13 +6,21 @@ use Livewire\Component;
 
 class Register extends Component
 {
-    public $name, $email, $password, $password_confirmation;
-    public $place_of_birth, $date_of_birth, $province_id;
-    public $regency_id, $district_id;
+    public $name;
+    public $email;
+    public $alamat;
+    public $place_of_birth;
+    public $date_of_birth;
+    public $jenis_kelamin;
+    public $password;
+    public $password_validator;
+    public $province;
+    public $regency;
+    public $district,$village;
 
-    public function register()
+    public function simpan()
     {
-        // code
+        # code...
     }
 
     public function render()

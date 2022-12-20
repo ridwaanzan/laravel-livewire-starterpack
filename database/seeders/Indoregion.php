@@ -14,6 +14,5 @@ class Indoregion extends Seeder
     public function run()
     {
         exec("php artisan db:seed --class=IndoRegionSeeder");
-        \Log::info('Import Wilayah Done.');
     }
 }
