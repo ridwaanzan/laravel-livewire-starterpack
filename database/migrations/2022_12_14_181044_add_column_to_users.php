@@ -16,7 +16,7 @@ class AddColumnToUsers extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('place_of_birth');
             $table->date('date_of_birth');
-            $table->string('jenis_kelamin');
+            $table->integer('jenis_kelamin');
             $table->string('alamat')->nullable();
             $table->char('province_id', 2);
             $table->foreign('province_id')
@@ -32,6 +32,11 @@ class AddColumnToUsers extends Migration
             $table->foreign('district_id')
                 ->references('id')
                 ->on('districts')
+                ->onUpdate('cascade')->onDelete('restrict');
+            $table->char('village_id', 7);
+            $table->foreign('village_id')
+                ->references('id')
+                ->on('villages')
                 ->onUpdate('cascade')->onDelete('restrict');
         });
     }

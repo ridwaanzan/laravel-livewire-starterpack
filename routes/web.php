@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::view('/login', 'pages.front.login.index')->name('login');
+Route::view('/register', 'pages.front.login.register')->name('login');
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function() {
     Route::view('/', 'pages.admin.dashboard')->name('dashboard');

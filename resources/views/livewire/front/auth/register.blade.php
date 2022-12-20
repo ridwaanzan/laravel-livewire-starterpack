@@ -37,6 +37,24 @@
                                     </div>
                                     <div class="form-group">
                                         <select
+                                            wire:model.defer="jenis_kelamin"
+                                            class="form-control form-control-user">
+                                            <option value="jenisKelamin">Pilih Jenis Kelamin</option>
+                                            <option value="{{ Konstan::LAKILAKI }}">Laki-laki</option>
+                                            <option value="{{ Konstan::PEREMPUAN }}">Wanita</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input
+                                            type=""
+                                            wire:model.defer="alamat"
+                                            class="form-control form-control-user"
+                                            id="alamat"
+                                            aria-describedby="alamat"
+                                            placeholder="Input Alamat">
+                                    </div>
+                                    <div class="form-group">
+                                        <select
                                             wire:model.defer="provinsi"
                                             class="form-control form-control-user">
                                             <option value="provinsi">Pilih Provinsi</option>
@@ -49,7 +67,7 @@
                                         <select
                                             wire:model="regency"
                                             class="form-control form-control-user">
-                                            <option value="kecamatan">Pilih Kecamatan</option>
+                                            <option value="kecamatan">Pilih Kota/Kabupaten</option>
                                             @foreach ($regencies as $regen)
                                                 <option value="{{$regen->id}}">{{$regen->nama}}</option>
                                             @endforeach
@@ -59,20 +77,21 @@
                                         <select
                                             wire:model.defer="district"
                                             class="form-control form-control-user">
-                                            <option value="kelurahan">Pilih Kelurahan</option>
+                                            <option value="kelurahan">Pilih Kecamatan</option>
                                             @foreach ($districts as $distr)
                                                 <option value="{{$distr->id}}">{{$distr->nama}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input
-                                            type=""
-                                            wire:model.defer="name"
-                                            class="form-control form-control-user"
-                                            id="exampleInputName"
-                                            aria-describedby="nameHelp"
-                                            placeholder="Enter Full Name...">
+                                        <select
+                                            wire:model.defer="village"
+                                            class="form-control form-control-user">
+                                            <option value="kelurahan">Pilih Kelurahan</option>
+                                            @foreach ($villages as $vill)
+                                                <option value="{{$vill->id}}">{{$vill->nama}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <input

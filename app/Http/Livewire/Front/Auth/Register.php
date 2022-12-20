@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Front\Auth;
 
+use App\Models\Province;
 use Livewire\Component;
 
 class Register extends Component
@@ -16,15 +17,22 @@ class Register extends Component
     public $password_validator;
     public $province;
     public $regency;
-    public $district,$village;
+    public $district;
+    public $village;
 
     public function simpan()
     {
         # code...
     }
 
+    public function mount ()
+    {
+
+    }
+
     public function render()
     {
-        return view('livewire.front.auth.register');
+        $province = Province::all();
+        return view('livewire.front.auth.register', get_defined_vars());
     }
 }
