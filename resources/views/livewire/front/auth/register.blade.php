@@ -55,11 +55,11 @@
                                     </div>
                                     <div class="form-group">
                                         <select
-                                            wire:model.defer="provinsi"
+                                            wire:model.lazy="province"
                                             class="form-control form-control-user">
-                                            <option value="provinsi">Pilih Provinsi</option>
-                                            @foreach ($provinces as $prov)
-                                                <option value="{{$prov->id}}">{{$prov->nama}}</option>
+                                            <option value="province">Pilih Provinsi</option>
+                                            @foreach ($province as $prov)
+                                                <option value="{{$prov->id}}">{{$prov->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -68,28 +68,30 @@
                                             wire:model="regency"
                                             class="form-control form-control-user">
                                             <option value="kecamatan">Pilih Kota/Kabupaten</option>
-                                            @foreach ($regencies as $regen)
-                                                <option value="{{$regen->id}}">{{$regen->nama}}</option>
-                                            @endforeach
+                                            @forelse ($regency as $regen)
+                                                <option value="{{$regen->id}}">{{$regen->name}}</option>
+                                            @empty
+                                            @endforelse
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <select
-                                            wire:model.defer="district"
+                                            wire:model="kecamatan"
                                             class="form-control form-control-user">
-                                            <option value="kelurahan">Pilih Kecamatan</option>
-                                            @foreach ($districts as $distr)
-                                                <option value="{{$distr->id}}">{{$distr->nama}}</option>
-                                            @endforeach
+                                            <option value="kecamatan">Pilih Kecamatan</option>
+                                            @forelse ($kecamatan as $distr)
+                                                <option value="{{$distr->id}}">{{$distr->name}}</option>
+                                            @empty
+                                            @endforelse
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <select
-                                            wire:model.defer="village"
+                                            wire:model="village"
                                             class="form-control form-control-user">
                                             <option value="kelurahan">Pilih Kelurahan</option>
-                                            @foreach ($villages as $vill)
-                                                <option value="{{$vill->id}}">{{$vill->nama}}</option>
+                                            @foreach ($village as $vill)
+                                                <option value="{{$vill->id}}">{{$vill->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
